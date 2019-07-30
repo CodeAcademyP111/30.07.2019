@@ -1,0 +1,17 @@
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe.config
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\bin\Debug\WindowsFormsApp.pdb
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.csprojResolveAssemblyReference.cache
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.Login.resources
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.Properties.Resources.resources
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.Register.resources
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.GenerateResource.Cache
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\bin\Debug\EntityFramework.dll
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\bin\Debug\EntityFramework.xml
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.AdminDashboard.resources
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.UserDashboard.resources
+C:\Users\Aishe\Desktop\p111\C#\29.07.2019\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.Reports.resources

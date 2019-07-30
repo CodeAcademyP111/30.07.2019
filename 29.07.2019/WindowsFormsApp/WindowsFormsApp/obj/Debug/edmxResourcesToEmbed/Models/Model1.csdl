@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P111Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Levels" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="P111Model.FK__Orders__UserId__46E78A0C" FromRole="User" ToRole="Order" />
+  </EntityType>
+  <EntityContainer Name="P111Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Books" EntityType="P111Model.Book" />
+    <EntitySet Name="OrderBooks" EntityType="P111Model.OrderBook" />
+    <EntitySet Name="Orders" EntityType="P111Model.Order" />
+    <AssociationSet Name="FK__OrderBook__BookI__49C3F6B7" Association="P111Model.FK__OrderBook__BookI__49C3F6B7">
+      <End Role="Book" EntitySet="Books" />
+      <End Role="OrderBook" EntitySet="OrderBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderBook__Order__4AB81AF0" Association="P111Model.FK__OrderBook__Order__4AB81AF0">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderBook" EntitySet="OrderBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__UserId__46E78A0C" Association="P111Model.FK__Orders__UserId__46E78A0C">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Count" Type="Int32" />
+    <NavigationProperty Name="OrderBooks" Relationship="P111Model.FK__OrderBook__BookI__49C3F6B7" FromRole="Book" ToRole="OrderBook" />
+  </EntityType>
+  <EntityType Name="OrderBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="OrdersId" Type="Int32" />
+    <NavigationProperty Name="Book" Relationship="P111Model.FK__OrderBook__BookI__49C3F6B7" FromRole="OrderBook" ToRole="Book" />
+    <NavigationProperty Name="Order" Relationship="P111Model.FK__OrderBook__Order__4AB81AF0" FromRole="OrderBook" ToRole="Order" />
+    <Property Name="Count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Total" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="OrderTime" Type="DateTime" Precision="0" />
+    <Property Name="UserId" Type="Int32" />
+    <NavigationProperty Name="OrderBooks" Relationship="P111Model.FK__OrderBook__Order__4AB81AF0" FromRole="Order" ToRole="OrderBook" />
+    <NavigationProperty Name="User" Relationship="P111Model.FK__Orders__UserId__46E78A0C" FromRole="Order" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__OrderBook__BookI__49C3F6B7">
+    <End Type="P111Model.Book" Role="Book" Multiplicity="0..1" />
+    <End Type="P111Model.OrderBook" Role="OrderBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderBook">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderBook__Order__4AB81AF0">
+    <End Type="P111Model.Order" Role="Order" Multiplicity="0..1" />
+    <End Type="P111Model.OrderBook" Role="OrderBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderBook">
+        <PropertyRef Name="OrdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__UserId__46E78A0C">
+    <End Type="P111Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="P111Model.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
